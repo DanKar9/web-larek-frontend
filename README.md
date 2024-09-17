@@ -61,7 +61,7 @@ yarn build
 
 ...
 
- interface IUser {
+ - interface IUser {
    payment: string,
    email: string,
    phone: string,
@@ -76,34 +76,35 @@ yarn build
 
 ...
 
- interface IProductsData {
+ - interface IProductsData {
    products: IProduct[];
    preview: string | null
 }
 ...
 
+
+
+
+
+
+
+
 Данные карточки, используемые в корзине при создании новой карточки
 ...
 
- type TCardBascet = Pick<IProduct, 'title' | 'price' >
+- type TCardBascet = Pick<IProduct, 'title' | 'price' >
 
 ...
 
-Данные карточки, используемые в первом шаге оформления товара
+Данные карточки, используемые в  оформлении товара
 
 ...
 
- type TUserInfoAdress = Pick<IUser, 'payment' | 'address'>
+ -  type TUserInfoContacts = Pick<IUser, 'payment' | 'address' |'email' | 'phone'>
 
 ...
 
-Данные карточки, используемые во втором шаге оформления товара
 
-...
-
- type TUserInfoContacts = Pick<IUser, 'email' | 'phone'>
-
-...
 
 
 ## Архитектура приложения
