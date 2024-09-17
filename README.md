@@ -46,7 +46,7 @@ yarn build
 
 Товар
 
-...
+```
  interface IProduct {
    id: string,
    description : string,
@@ -55,12 +55,12 @@ yarn build
    category: string,
    price: number| null
 }
-...
+```
 
 Покупатель
 
-...
- - interface IUser {
+```
+  interface IUser {
    payment: string,
    email: string,
    phone: string,
@@ -68,31 +68,31 @@ yarn build
    total: number | null,
    items: string[]
 }
-...
+
+```
 
 Интерфейс для модели данных продуктов
 
-...
- - interface IProductsData {
+```
+  interface IProductsData {
    products: IProduct[];
    preview: string | null
 }
-...
+```
 
 
 
 
 Данные карточки, используемые в корзине при создании новой карточки
-...
-- type TCardBascet = Pick<IProduct, 'title' | 'price' >
-...
+```javasc
+ type TCardBascet = Pick<IProduct, 'title' | 'price' >
+```
 
 Данные карточки, используемые в  оформлении товара
 
-...
- -  type TUserInfoContacts = Pick<IUser, 'payment' | 'address' |'email' | 'phone'>
-...
-
+```
+   type TUserInfoContacts = Pick<IUser, 'payment' | 'address' |'email' | 'phone'>
+```
 
 
 
