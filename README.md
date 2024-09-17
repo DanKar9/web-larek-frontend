@@ -18,6 +18,7 @@
 ## Установка и запуск
 Для установки и запуска проекта необходимо выполнить команды
 
+
 ```
 npm install
 npm run start
@@ -54,13 +55,11 @@ yarn build
    category: string,
    price: number| null
 }
-
 ...
 
 Покупатель
 
 ...
-
  - interface IUser {
    payment: string,
    email: string,
@@ -69,13 +68,11 @@ yarn build
    total: number | null,
    items: string[]
 }
-
 ...
 
 Интерфейс для модели данных продуктов
 
 ...
-
  - interface IProductsData {
    products: IProduct[];
    preview: string | null
@@ -85,23 +82,15 @@ yarn build
 
 
 
-
-
-
-
 Данные карточки, используемые в корзине при создании новой карточки
 ...
-
 - type TCardBascet = Pick<IProduct, 'title' | 'price' >
-
 ...
 
 Данные карточки, используемые в  оформлении товара
 
 ...
-
  -  type TUserInfoContacts = Pick<IUser, 'payment' | 'address' |'email' | 'phone'>
-
 ...
 
 
