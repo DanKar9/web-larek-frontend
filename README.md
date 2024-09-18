@@ -46,7 +46,7 @@ yarn build
 
 Товар
 
-```
+```typescript
  interface IProduct {
    id: string,
    description : string,
@@ -59,21 +59,19 @@ yarn build
 
 Покупатель
 
-```
+```typescript
   interface IUser {
    payment: string,
    email: string,
    phone: string,
    address: string,
-   total: number | null,
-   items: string[]
 }
 
 ```
 
 Интерфейс для модели данных продуктов
 
-```
+```typescript
   interface IProductsData {
    products: IProduct[];
    preview: string | null
@@ -84,13 +82,13 @@ yarn build
 
 
 Данные карточки, используемые в корзине при создании новой карточки
-```javasc
- type TCardBascet = Pick<IProduct, 'title' | 'price' >
+```typescript
+ type TCardBascet = Pick<IProduct,'id' | 'title' | 'price' >
 ```
 
 Данные карточки, используемые в  оформлении товара
 
-```
+```typescript
    type TUserInfoContacts = Pick<IUser, 'payment' | 'address' |'email' | 'phone'>
 ```
 
@@ -142,25 +140,6 @@ yarn build
 Классы представления
 Представление управляет отображением данных и обработкой событий пользовательского интерфейса, таких как клики на карточки товаров и кнопки.
 
-#### Класс UserData
-
-Класс отвечает за хранение и логику работы с данными текущего пользователя.\
-Конструктор класса принимает инстант брокера событий\
-В полях класса хранятся следующие данные:
-  - payment: string - выбор оплаты
-  - email: string - почта покупателя
-  - phone: string - номер телефона покупателя
-  - address: string адрес покупателя
-  - total: number | null - сумма корзины
-  - items: TUserInfoContacts[] - корзина товаров
-  - events: IEvents - экземпляр класса `EventEmitter` для инициации событий при изменении данных.
-
-  Так же класс предоставляет набор методов для взаимодействия с этими данными.
-
-   - addProductBasket(product:IProduct):void - добавляет товар в корзину
-   - deleteProduct(productId:string):void - удаление товара из корзины
-   - deleteBasket(product:TCardBascet):void - очистка корзины
-   - checkValidation(data: Record<keyof TUserInfoContacts,string>) :boolean - проверяет объект с данными пользователя на валидность
 
 
  ####  Класс Modal
