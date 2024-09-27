@@ -1,3 +1,5 @@
+
+
 export interface IProduct {
    id: string,
    description : string,
@@ -12,6 +14,8 @@ export interface IUser {
    email: string,
    phone: string,
    address: string,
+   total:number,
+   items:string[]
 }
 
 export interface IProductsData {
@@ -19,11 +23,22 @@ export interface IProductsData {
    preview: string | null;
 }
 
+export interface IOrder {
+   total:number,
+   id: string
+}
 
+export interface IBasket {
+   total:number,
+   items:string[]
+}
 
-
+export type TOrderForm = Omit<IUser, 'total' | 'items'>
 export type TCardBascet = Pick<IProduct,'id'| 'title' | 'price' >
 
-
+export type TPayMethod = 'cash' | 'card'
 
 export type TUserInfoContacts = Pick<IUser, 'payment' | 'address' |'email' | 'phone'>
+
+
+
