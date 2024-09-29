@@ -31,7 +31,7 @@ export class AppData {
     addToBasket(item: IProduct) {
         this.basket.items.push(item.id)
         this.basket.total += item.price
-        this.events.emit('basket:change', this.order)
+        this.events.emit('basket:change')
     }
 
     deleteFromBasket (item:IProduct){

@@ -63,14 +63,18 @@ events.on('contacts:submit',() => {
     api.orderLots(appData.order)
     .then((res) => {
         const success = new Success(cloneTemplate(ensureElement<HTMLTemplateElement>('#success')), {
+            
             onClick: () => {
                 modal.close()
-                appData.clearBasket()
             }
+            
         })
+        appData.clearBasket()
 
         modal.render({
             content: success.render(res)
+            
+            
         })
     })
     .catch(err => {

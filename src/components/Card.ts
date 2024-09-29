@@ -83,5 +83,27 @@ import { Component } from "./base/Component";
 
         set category (value:string) {
             this.setText(this._category,value)
+            if (this._category) {
+                switch (value) {
+                    case 'софт-скил':
+                        this._category.classList.add('card__category_soft');
+                        break;
+                    case 'дополнительное':
+                        this._category.classList.add('card__category_additional');
+                        break;
+                    case 'другое':
+                        this._category.classList.add('card__category_other');
+                        break;
+                    case 'кнопка':
+                        this._category.classList.add('card__category_button');
+                        break;
+                    case 'хард-скил':
+                        this._category.classList.add('card__category_hard');
+                        break;
+    
+                    default:
+                        break;
+                }
+            }
         }
     }
